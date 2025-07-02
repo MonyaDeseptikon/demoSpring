@@ -46,9 +46,94 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+<!--Типа, замена swagger, но как работает не разобрался-->
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.8.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+			<version>2.8.9</version>
+		</dependency>
 
+<!--	Это все говно , которое забросили c 2020 года и оно уже не работает-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-rest</artifactId>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>io.springfox</groupId>-->
+<!--			<artifactId>springfox-boot-starter</artifactId>-->
+<!--			<version>3.0.0</version>-->
+<!--		</dependency>-->
+
+
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+<!--		<dependency>-->
+<!--			<groupId>io.springfox</groupId>-->
+<!--			<artifactId>springfox-swagger2</artifactId>-->
+<!--			<version>2.7.0</version>-->
+<!--		</dependency>-->
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui &ndash;&gt;-->
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>io.springfox</groupId>-->
+<!--			<artifactId>springfox-swagger-ui</artifactId>-->
+<!--			<version>2.7.0</version>-->
+<!--		</dependency>-->
 
 	</dependencies>
+
+
+<!--	<build>-->
+<!--		<plugins>-->
+
+<!--			<plugin>-->
+<!--				<groupId>org.example</groupId>-->
+<!--				<artifactId>myDependecy</artifactId>-->
+<!--				<version>1.0-SNAPSHOT</version>-->
+<!--			</plugin>-->
+
+
+<!--			<plugin>-->
+<!--				<groupId>com.akathist.maven.plugins.launch4j</groupId>-->
+<!--				<artifactId>launch4j-maven-plugin</artifactId>-->
+<!--				<version>2.5.1</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>l4j-clui</id>-->
+<!--						<phase>package</phase>-->
+<!--						<goals>-->
+<!--							<goal>launch4j</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<headerType>gui</headerType>-->
+<!--							<outfile>${project.build.directory}/${project.build.finalName}.exe</outfile>-->
+<!--							<jar>${project.build.directory}/${project.build.finalName}.jar</jar>-->
+<!--							<errTitle>App Error</errTitle>-->
+<!--							<jre>-->
+<!--								<path>%JAVA_HOME%;%PATH%</path>-->
+<!--								<minVersion></minVersion>-->
+<!--								<maxVersion></maxVersion>-->
+<!--								<jdkPreference></jdkPreference>-->
+<!--								<requires64Bit></requires64Bit>-->
+<!--							</jre>-->
+<!--							<classPath>-->
+<!--								<mainClass>org.example.Windows.MainWindow</mainClass>-->
+<!--							</classPath>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+<!--		</plugins>-->
+<!--	</build>-->
+<!--	-->
+
 
 	<build>
 		<plugins>
@@ -56,6 +141,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>Desepticon.Monya.demoSpring.taskList.SpringTasks</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
